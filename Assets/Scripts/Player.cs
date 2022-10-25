@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class Player : MonoBehaviour
 {
@@ -35,14 +38,14 @@ public class Player : MonoBehaviour
 
         else if(transform.position.y <= -4.3f)
         {
-            GameManager.thisManager.GameOver();
+         SceneManager.LoadScene("GameOver");
         }
     }
     public void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag == "Obstacles")
         {
-            GameManager.thisManager.GameOver();
+         SceneManager.LoadScene("GameOver");
         }
         
     }
